@@ -40,9 +40,26 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
+input[type=text]{
+  margin-right: 50px;
+}
 
 .navbar{
   color: coral;
   font-size: 30px;
+}
+label{
+  color: coral;
+}
+fieldset{
+  width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  border-color: coral;
+  text-align: left;
+}
+legend{
+  color: coral;
+  text-align: left;
 }
 

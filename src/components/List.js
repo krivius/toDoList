@@ -12,7 +12,7 @@ class List extends React.Component{
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(id){
-        console.log(id)
+        // console.log(id)
         this.setState(prevState =>{
             const updatedTodos = prevState.todos.map(todo => {
                 if(todo.id === id){
