@@ -19,7 +19,7 @@ function TodoItem(props) {
             />
             <p style={props.item.completed ? completedStyle : null}>
                 {props.item.text}
-                <button className="btnRemove">Remove</button>
+                <button className="btnRemove" onClick={() => props.handleRemove(props.item.id)}>Remove</button>
             </p>
         </div>
     );

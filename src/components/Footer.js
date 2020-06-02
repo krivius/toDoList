@@ -14,6 +14,7 @@ class Footer extends React.Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleCheck = this.handleCheck.bind(this)
+        this.handleRemove = this.handleRemove.bind(this)
     }
 
     handleChange(event) {
@@ -35,6 +36,8 @@ class Footer extends React.Component {
 
         this.setState(prevState => ({currId: prevState.currId + 1}))
         this.state.taskList.push(task)
+        localStorage.setItem('taskList', this.state.taskList)
+
         // console.log(this.state.taskList)
     }
 
@@ -55,8 +58,14 @@ class Footer extends React.Component {
         });
     }
 
+    handleRemove(id){
+        const taskList = localStorage.getItem('taskList')
+
+        console.log(taskList)
+    }
+
     render() {
-        const listComponents = this.state.taskList.map(item => <TodoItem key={item.id} item={item} handleCheck={this.handleCheck}/>)
+        const listComponents = this.state.taskList.map(item => <TodoItem key={item.id} item={item} handleCheck={this.handleCheck} handleRemove={this.handleRemove}/>)
         return (
 
             <footer>
