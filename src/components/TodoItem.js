@@ -14,9 +14,13 @@ function TodoItem(props) {
                 type="checkbox"
                 value={props.item.id}
                 checked={props.item.completed}
-                onChange={() => props.handleChange(props.item.id)}
+                id={props.item.id}
+                onChange={() => props.handleCheck(props.item.id)}
             />
-            <p style={props.item.completed ? completedStyle : null}>{props.item.text}</p>
+            <p style={props.item.completed ? completedStyle : null}>
+                {props.item.text}
+                <button className="btnRemove">Remove</button>
+            </p>
         </div>
     );
 

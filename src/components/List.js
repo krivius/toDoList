@@ -1,13 +1,13 @@
 import React from "react";
 
 import TodoItem from "./TodoItem";
-import ListData from "./ListData";
+// import ListData from "./ListData";
 
 class List extends React.Component{
     constructor() {
         super();
         this.state ={
-            todos: ListData
+            todos: []
         }
         this.handleChange = this.handleChange.bind(this)
     }

@@ -30,6 +30,10 @@ body{
   font-size: 15px;
   color: coral;
 }
+.todo-item p{
+  width: 100%;
+  text-align: left;
+}
 
 input[type=checkbox] {
   margin-right: 10px;
@@ -62,4 +66,6 @@ legend{
   color: coral;
   text-align: left;
 }
-
+.btnRemove{
+  float: right;
+}
