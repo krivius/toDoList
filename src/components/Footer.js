@@ -56,12 +56,23 @@ class Footer extends React.Component {
                 taskList: updatedTasks
             }
         });
+        localStorage.setItem('taskList', this.state.taskList)
     }
 
     handleRemove(id){
-        const taskList = localStorage.getItem('taskList')
+        const oldTaskList = this.state.taskList
+        let updatedTaskList=[];
+        let index=0
+        for (let i=0; i<oldTaskList.length; i++){
+            if(id !== oldTaskList[i].id){
+                updatedTaskList.push(oldTaskList[i]);
+            }
+        }
+        this.setState(()=> {
+            return {taskList: updatedTaskList}
+        })
+        localStorage.setItem('taskList', this.state.taskList)
 
-        console.log(taskList)
     }
 
     render() {
